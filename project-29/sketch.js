@@ -13,7 +13,7 @@ function preload(){
   polygon_img=loadImage("polygon.png");
 }
 function setup() {
-  createCanvas(900,400);
+  createCanvas(displayWidth-20,displayHeight-30);
   engine = Engine.create();
   world = engine.world;
   Engine.run(engine);
@@ -107,14 +107,14 @@ function draw() {
   fill("orange");
   block25.display();
   image(polygon_img,ball.position.x,ball.position.y,40,40);
-  slingshot.display
+  slingshot.display();
  
 
 
 }
 
 function mouseDragged(){
-  Matter.Body.setPosition(ball.body,{x:mouseX, y:mouseY});
+  Matter.Body.setPosition(this.ball,{x:mouseX, y:mouseY});
 }
 
 function mouseReleased(){
